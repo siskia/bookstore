@@ -15,6 +15,8 @@
 			<property name="javax.persistence.schema-generation.scripts.create-target" value="bookStoreCreate.ddl"/> 
 			<!-- script to drop tables -->
 			<property name="javax.persistence.schema-generation.scripts.drop-target" value="bookStoreDrop.ddl"/> 
+		
+			<property name="javax.persistence.sql-load-script-source" value="import.sql"/>
 		</properties>
 	</persistence-unit>
 </persistence>
