@@ -11,22 +11,25 @@
     <div class="navbar-collapse collapse" id="collapsingNavbar">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">List</a>
+                <a class="nav-link" [routerLink]="['/book-list']">List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Create</a>
+                <a class="nav-link" [routerLink]="['/book-form']">Create</a>
             </li>
         </ul>
     </div>
 	</nav>
 </div>
 
-<div class="container-fluid">
+<div class="container">
+	<div class="jumbotron">
     <div class="row">
-        <div class="col-9 col-sm-6 col-md-3">
-        	<bs-book-form></bs-book-form>
+        <div class="col">
+        	<!--  <bs-book-form></bs-book-form>
         	<bs-book-detail></bs-book-detail>
-			<bs-book-list></bs-book-list>
+			<bs-book-list></bs-book-list> -->
+		 	<router-outlet></router-outlet>
         </div>
+    </div>
     </div>
 </div>
