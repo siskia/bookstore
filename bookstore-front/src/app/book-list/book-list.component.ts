@@ -1,31 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Book, BookService } from '../service';
 
 @Component({
   selector: 'bs-book-list',
   templateUrl: './book-list.component.html',
-  styles: []
+  styles: [],
+  providers:[BookService]
 })
 export class BookListComponent implements OnInit {
 
-    private nbBooks: number = 2;
-    private books = [
-        {
-            id: "1",
-            title: "dummy title 1",
-            description: "dummy description 1",
-            imageURL: "http://ecx.images-amazon.com/images/I/51amFVZbyKL._SL160_.jpg",
-        },
-        {
-            id: "2",
-            title: "dummy title 2",
-            description: "dummy description 2",
-            imageURL: "http://ecx.images-amazon.com/images/I/51baRLwlufL._SL160_.jpg",
-        }
-    ];
+  nbBooks: number;
+  books: Book[];
 
-  constructor() { }
+  constructor(private bookService: BookService) { }
 
   ngOnInit() {
+    this.bookService.countBooks().subscribe(nbBooks => this.nbBooks = nbBooks);
+    this.bookService.getBooks().subscribe(books => this.books = books);
   }
 
 }
