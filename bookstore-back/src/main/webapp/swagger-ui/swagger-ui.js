@@ -23832,9 +23832,9 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
       // Image
     } else if (/^image\//.test(contentType)) {
       var urlCreator = window.URL || window.webkitURL;
-      var imageUrl = urlCreator.createObjectURL(content);
+      var imageURL = urlCreator.createObjectURL(content);
 
-      pre = $('<img>').attr( 'src', imageUrl);
+      pre = $('<img>').attr( 'src', imageURL);
       // Audio
     } else if (/^audio\//.test(contentType) && supportsAudioPlayback(contentType)) {
       pre = $('<audio controls>').append($('<source>').attr('src', url).attr('type', contentType));
